@@ -1,0 +1,77 @@
+.control-group {
+    display: grid;
+    gap: 6px;
+}
+
+.control-grid {
+    display: grid;
+    gap: 8px;
+}
+
+.control-grid.compact {
+    grid-template-columns: 1fr 1fr;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+label {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--panel);
+    color: var(--text);
+    padding: 0 12px;
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+button:hover,
+select:hover,
+input:hover {
+    border-color: var(--text);
+}
+
+.custom-panel {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--panel);
+}
+
+.custom-panel h2 {
+    margin: 0 0 4px;
+    font-size: 16px;
+}
+
+.custom-panel p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.custom-panel input {
+    padding-top: 8px;
+}
+
+@media (max-width: 420px) {
+    .control-grid.compact,
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+}

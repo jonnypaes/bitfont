@@ -1,0 +1,15 @@
+{
+  "name": "bitfont",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build-bitfont.mjs",
+    "list": "node tools/list-bmf-sources.mjs",
+    "inspect:ascii": "node tools/inspect-bmf-bin.mjs dist/binary/ascii/terminal/font_terminal_ascii_5x7.bin",
+    "inspect:latin": "node tools/inspect-bmf-bin.mjs dist/binary/latin/terminal/font_terminal_latin1_8x12.bin"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

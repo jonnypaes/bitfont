@@ -1,0 +1,46 @@
+{
+  "schema": "bitfont/manifest/v1",
+  "name": "BitFont",
+  "description": "BMF source fonts and generated runtime artifacts.",
+  "sourceRoot": "fonts/src",
+  "distRoot": "dist",
+  "defaultFont": "font_terminal_latin1_8x12",
+  "fonts": [
+    {
+      "id": "font_terminal_ascii_5x7",
+      "label": "Terminal ASCII 5x7",
+      "script": "ascii",
+      "encoding": "ASCII",
+      "width": 5,
+      "height": 7,
+      "advance": 6,
+      "baseline": 6,
+      "glyphCount": 128,
+      "source": "ascii/terminal/font_terminal_ascii_5x7.bmf",
+      "artifacts": {
+        "json": "dist/json/ascii/terminal/font_terminal_ascii_5x7.json",
+        "cHeader": "dist/include/ascii/terminal/font_terminal_ascii_5x7.h",
+        "binary": "dist/binary/ascii/terminal/font_terminal_ascii_5x7.bin",
+        "bitmap": "dist/bitmap/ascii/terminal/font_terminal_ascii_5x7.bmp"
+      }
+    },
+    {
+      "id": "font_terminal_latin1_8x12",
+      "label": "Terminal Latin-1 8x12",
+      "script": "latin",
+      "encoding": "ISO-8859-1",
+      "width": 8,
+      "height": 12,
+      "advance": 9,
+      "baseline": 10,
+      "glyphCount": 256,
+      "source": "latin/terminal/font_terminal_latin1_8x12.bmf",
+      "artifacts": {
+        "json": "dist/json/latin/terminal/font_terminal_latin1_8x12.json",
+        "cHeader": "dist/include/latin/terminal/font_terminal_latin1_8x12.h",
+        "binary": "dist/binary/latin/terminal/font_terminal_latin1_8x12.bin",
+        "bitmap": "dist/bitmap/latin/terminal/font_terminal_latin1_8x12.bmp"
+      }
+    }
+  ]
+}

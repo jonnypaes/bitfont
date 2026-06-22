@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content='width=device-width, initial-scale=1.0, interactive-widget=resizes-content' name='viewport'/>
+<title>BitFont - BMF Bitmap Font Tester</title>
+<link href='favicon.ico' rel='icon' type='image/x-icon'/>
+<link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+<main class="app-shell">
+    <aside class="sidebar" aria-label="Font tester controls">
+        <header class="app-header">
+            <h1>BMF Bitmap Font Tester</h1>
+            <p>Preview, inspect, and export BitFont BMF sources and generated runtime artifacts.</p>
+        </header>
+
+        <div id="warning" class="warning"></div>
+
+        <section class="control-group">
+            <label for="textInput">Text</label>
+            <input id="textInput" type="text" value="déjà vu" spellcheck="false" aria-label="Text to render">
+        </section>
+
+        <section class="control-group">
+            <label for="fontSelect">Font</label>
+            <select id="fontSelect" aria-label="Font"></select>
+        </section>
+
+        <section class="control-grid compact">
+            <div class="control-group">
+                <label for="formatSelect">Load</label>
+                <select id="formatSelect" aria-label="Source format"></select>
+            </div>
+            <div class="control-group">
+                <label for="exportSelect">Export</label>
+                <select id="exportSelect" aria-label="Export format"></select>
+            </div>
+        </section>
+
+        <section class="button-grid">
+            <button id="drawButton" type="button">Draw</button>
+            <button id="atlasButton" type="button">Atlas</button>
+            <button id="downloadButton" type="button">Download</button>
+            <button id="clearButton" type="button">Clear</button>
+        </section>
+
+        <section id="customPanel" class="custom-panel" hidden>
+            <h2>Custom font converter</h2>
+            <p>Upload a BMF, BMFB, or JSON font. The preview and Download button will use the uploaded font.</p>
+            <input id="fontFiles" type="file" accept=".bmf,.bin,.json,application/json,application/octet-stream,text/plain" multiple>
+        </section>
+
+        <section class="bitmap-preview">
+            <h2>Current BMP atlas</h2>
+            <img id="bitmapAtlas" alt="Selected font BMP byte atlas">
+        </section>
+
+        <footer class="app-footer">
+            <a id="repoLink" href="https://github.com/jonnypaes/bitfont">GitHub</a>
+            <span aria-hidden="true">·</span>
+            <a href="docs/web-tester.html">Docs</a>
+            <span aria-hidden="true">·</span>
+            <a id="customModeLink" href="?custom=true">Custom font</a>
+        </footer>
+    </aside>
+
+    <section class="workspace" aria-label="Bitmap font output">
+        <section class="terminal-panel" aria-label="Bitmap font canvas">
+            <canvas id="fontCanvas"></canvas>
+        </section>
+        <div id="meta" class="meta"></div>
+    </section>
+</main>
+<script type="module" src="src/js/app.mjs"></script>
+</body>
+</html>

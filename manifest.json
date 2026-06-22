@@ -1,0 +1,6 @@
+{
+  "schema": "bitfont/project/v1",
+  "name": "BitFont",
+  "tester": "BMF Bitmap Font Tester",
+  "manifest": "dist/manifest.json"
+}
