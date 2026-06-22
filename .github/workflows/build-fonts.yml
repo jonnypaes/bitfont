@@ -1,0 +1,25 @@
+name: Build fonts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-fonts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Build generated font artifacts
+        run: bash build.sh
+      - name: Check generated artifacts are committed
+        run: git diff --exit-code -- dist manifest.json
+      - name: Upload generated font artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bitfont-dist
+          path: dist
